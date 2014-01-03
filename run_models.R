@@ -9,7 +9,6 @@ ONLYPRED = FALSE
 options("scipen"=100)
 require('data.table')
 require('gbm')
-source(paste(MAIN_PATH, 'models.R', sep=''))
 if (DATAPROCESS) {
 	##
 	## Process data.csv and test csv
@@ -17,6 +16,7 @@ if (DATAPROCESS) {
 	##
 	source(paste(MAIN_PATH, 'data.R', sep=''))
 }	
+source(paste(MAIN_PATH, 'models.R', sep=''))
 ##
 ## See the models.R file for description of each function
 ##
