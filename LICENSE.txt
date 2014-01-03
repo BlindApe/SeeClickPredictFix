@@ -1,3 +1,5 @@
+BSD-3 OSI license
+
 Copyright (c) 2014, José A. Guerrero
 All rights reserved.
 
