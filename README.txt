@@ -24,6 +24,7 @@ For predict only new data:
 - Set parameters in run_models.R
 	DATAPROCESS = TRUE
 	ONLYPRED = TRUE
+- Put the new data in DATA_PATH as test.csv	
 - Execute run_models.R (Data process takes several days for LOO and BAYES features!)
 - The predictions are saved in SUBMISSION_PATH directory (copy all previous prediction to other fold!)
 - The final solution is generated in MAIN_PATH\blending.csv
