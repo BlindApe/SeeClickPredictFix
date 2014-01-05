@@ -766,14 +766,14 @@ gbm_by_city_BC_BAYES_n_BoW <- function(onlypred) {
 	BF = 0.90
 	TEST_BEGIN = 485
 	HOLD_LENGTH = 0
-	TRAIN_LENGTH = 180
-	TRAIN_BEGIN = TEST_BEGIN - TRAIN_LENGTH
 	BAYES = TRUE
 	FIRST_FEATURE = 7
 	cities <- c('New_Haven', 'Oakland', 'Richmond', 'Chicago')
 	for (CITY in cities) {
 		load(file=paste(DATA_PATH, 'bigdata.RData', sep=''))
 		if (CITY=='Chicago') {
+			TRAIN_LENGTH = 180
+			TRAIN_BEGIN = TEST_BEGIN - TRAIN_LENGTH			
 			ID = 8
 			LR = 0.002
 			TREES = 1300
@@ -785,9 +785,13 @@ gbm_by_city_BC_BAYES_n_BoW <- function(onlypred) {
 			TREES = 2300
 		}
 		if (CITY=='Richmond') {
+			TRAIN_LENGTH = 120
+			TRAIN_BEGIN = TEST_BEGIN - TRAIN_LENGTH
 			TREES = 3500
 		}
 		if (CITY=='New_Haven') {
+			TRAIN_LENGTH = 120
+			TRAIN_BEGIN = TEST_BEGIN - TRAIN_LENGTH
 			TREES = 8500
 		}
 		descrip = paste('gbm_BC_BAYES_n_BoW', CITY, 'id', ID, 'lr', LR, 'moin', MOIN, 'bf', BF, 'train', TRAIN_LENGTH, 'hold', HOLD_LENGTH, sep='_')
